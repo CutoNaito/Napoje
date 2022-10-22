@@ -46,6 +46,10 @@ function postValues(){
     xmlhttp.open("POST", "./vypis.php", true);
     xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xmlhttp.send(result);
+    const table = document.getElementById("table");
+    while(table.rows.length > 1){
+        table.deleteRow(1);
+    }
 }
 
 function GetValues(){
