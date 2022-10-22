@@ -51,6 +51,7 @@
                     <option value="t">t</option>
                 </select>
                 <button onclick="GetValues()">Get</button>
+                <button onclick="CountValues()">Ceny</button>
                 <p id="result2"></p>
             </div>
             <div id="table_div">
@@ -59,6 +60,7 @@
                     <tr>
                         <th>Typ</th>
                         <th>Pocet</th>
+                        <th>Cena</th>
                     </tr>
                     <tr>
                         <td id="typ"></td>
