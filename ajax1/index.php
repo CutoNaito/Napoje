@@ -50,8 +50,7 @@
                     <option value="Molič Jan">Molic Jan</option>
                     <option value="t">t</option>
                 </select>
-                <button onclick="GetValues()">Get</button>
-                <button onclick="CountValues()">Ceny</button>
+                <button onclick="getValues()">Get</button>
                 <p id="result2"></p>
             </div>
             <div id="table_div">

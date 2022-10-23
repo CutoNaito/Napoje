@@ -1,5 +1,3 @@
-const encoder = new TextEncoder();
-
 function showValue(){
     let jmeno = document.forms["form"]["jmeno"].value;
     let mleko = document.forms["form"]["mleko"].value;
@@ -27,18 +25,6 @@ function showValue(){
     event.preventDefault();
 }
 
-function getValues(){
-    const button = document.getElementById("valuebutton");
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status == 200){
-            document.getElementById("result").innerHTML = this.responseText;
-        }
-    }
-    xmlhttp.open("GET", "./get.php");
-    xmlhttp.send();
-}
-
 function postValues(){
     let value = document.getElementById("select").value;
     let result = "value=" + value;
@@ -52,7 +38,7 @@ function postValues(){
     }
 }
 
-function GetValues(){
+function getValues(){
     let name = decodeURIComponent(getCookie("name"));
     document.getElementById("name").innerHTML = name;
     const table = document.getElementById("table");
@@ -67,7 +53,7 @@ function GetValues(){
         let cell3 = row.insertCell(2);
         cell1.innerHTML = typ_array[i];
         cell2.innerHTML = count_array[i];
-        cell3.innerHTML = CountValues()[i] + " Kč";
+        cell3.innerHTML = countValues()[i] + " Kč";
     }
     let row2 = table.insertRow(typ_array.length + 1);
     let cell3 = row2.insertCell(0);
@@ -75,7 +61,7 @@ function GetValues(){
     let cell5 = row2.insertCell(2);
     cell3.innerHTML = "Celkem";
     cell4.innerHTML = count_array.reduce((a, b) => parseInt(a) + parseInt(b));
-    cell5.innerHTML = CountValues()[1] + CountValues()[2] + CountValues()[3] + CountValues()[4] + CountValues()[5] + " Kč";
+    cell5.innerHTML = countValues()[1] + countValues()[2] + countValues()[3] + countValues()[4] + countValues()[5] + " Kč";
 
 }
 
@@ -89,7 +75,7 @@ function getCookie(name) {
     return cookie[name];
 }
 
-function CountValues(){
+function countValues(){
     const count = decodeURIComponent(getCookie("count"));
     const count_array = count.split(" ");
     let mlekoKg = (50 * count_array[0]) / 1000;
