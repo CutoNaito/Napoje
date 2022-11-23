@@ -1,6 +1,7 @@
 <?php
 require "../conn.php";
 global $conn;
+session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(trim($_POST["verify"]) == $_SESSION["token"]){

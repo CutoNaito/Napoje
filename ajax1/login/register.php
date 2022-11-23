@@ -15,10 +15,10 @@
 
     $mail = new PHPMailer();
     $mail->isSMTP();
-    $mail->Host = "smtp.seznam.cz";
+    $mail->Host = "smtp.endora.cz";
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = "tls";
-    $mail->Port = "465";
+    $mail->Port = "587";
     $mail->Username = $mail_username;
     $mail->Password = $mail_password;
 
@@ -70,6 +70,7 @@
                 $stmt->close();
             }
         }
+        session_start();
         $_SESSION["username"] = $username;
         $_SESSION["email"] = $email;
         $_SESSION["password"] = $password;
