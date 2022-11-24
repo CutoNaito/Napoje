@@ -32,6 +32,16 @@ if (isset($_POST['submit'])) {
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <header>
+            <h1>Napoje</h1>
+            <?php if($_SESSION["logged"] !== true){?>
+                <a href="login/register.php">Register</a>
+                <a href="login/login.php">Login</a>
+            <?php } else { ?>
+                <a href="login/logout.php">Logout</a>
+                <a href="profil.php">Profil</a>
+            <?php } ?>
+        </header>
         <main>
             <div>
                 <form onsubmit="showValue()" id="form" name="form">

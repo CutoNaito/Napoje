@@ -24,7 +24,7 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(trim($_POST["username"]) !== ""){
-            $sql = "SELECT id FROM users WHERE username = ?";
+            $sql = "SELECT id FROM people WHERE name = ?";
 
             if($stmt = $conn->prepare($sql)){
                 $stmt->bind_param("s", $param_username);
@@ -49,7 +49,7 @@
             $password = trim($_POST["password"]);
         }
         if (trim($_POST["email"]) !== "") {
-            $sql = "SELECT id FROM users WHERE email = ?";
+            $sql = "SELECT id FROM people WHERE email = ?";
 
             if($stmt = $conn->prepare($sql)){
                 $stmt->bind_param("s", $param_email);
@@ -73,7 +73,6 @@
         session_start();
         $_SESSION["username"] = $username;
         $_SESSION["email"] = $email;
-        $_SESSION["password"] = $password;
         $_SESSION["token"] = GenerateRandomString(20);
         $mail->Subject = "Verification code";
         $mail->Body = "Your verification code is: " . $_SESSION["token"];
@@ -95,7 +94,7 @@
 <head>
 <title>Uloha AJAX1</title>
 <script src="../script.js"></script>
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../registerstyle.css">
 </head>
 <body>
 <main>

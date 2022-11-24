@@ -5,7 +5,7 @@ session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(trim($_POST["verify"]) == $_SESSION["token"]){
-        $sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO people (name, password, email) VALUES (?, ?, ?)";
         if($stmt = $conn->prepare($sql)){
             $stmt->bind_param("sss", $param_username, $param_password, $param_email);
             $param_username = $_SESSION["username"];
@@ -13,6 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_email = $_SESSION["email"];
             if($stmt->execute()){
                 session_start();
+                $_SESSION["logged"] = true;
                 header("location: ../index.php");
             } else{
                 echo "Something went wrong. Please try again later.";
