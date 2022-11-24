@@ -34,6 +34,7 @@ if (isset($_POST['submit'])) {
     <body>
         <header>
             <h1>Napoje</h1>
+            <a href="/signin.php">Přihlaš se pomocí Microsoft360</a>
             <?php if($_SESSION["logged"] !== true){?>
                 <a href="login/register.php">Register</a>
                 <a href="login/login.php">Login</a>
