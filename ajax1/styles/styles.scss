@@ -1,0 +1,192 @@
+$font: Helvetica, sans-serif;
+$header-color: #333;
+$footer-color: #666;
+$button-color: #999;
+$main-color: #ccc;
+
+body {
+    margin: 0 !important;
+    padding: 0;
+// Path: _header.scss
+    header {
+        width: 100%;
+        height: 120px;
+        margin-top: 0;
+        padding: 10px;
+        text-align: center;
+        font-family: $font;
+        background-color: $header-color;
+
+        h1 {
+            font-size: 2em;
+            color: white;
+        }
+
+        a {
+            color: white;
+            background-color: $button-color;
+            padding: 10px;
+            margin-bottom: 2px;
+            text-decoration: none;
+
+            &:hover {
+                background-color: #666;
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        text-align: center;
+        font-family: $font;
+        background-color: $main-color;
+
+        h2 {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        p {
+            font-size: 1em;
+            color: #333;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap !important;
+            max-width: 100%;
+            max-height: 100%;
+
+            .form-card { 
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                .form-element {
+                    width: 70%;
+                
+
+                    form {
+                        padding: 10px;
+                        font-family: $font;
+                        background-color: $footer-color;
+                        flex-grow: 4;
+                        
+                        .form-text {
+                            text-align: right;
+
+                            input[type=text] {
+                                width: 90%;
+                                height: 100%;
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                                margin: 4px;
+                                text-align: center;
+                                font-family: $font;
+                                background-color: white;
+                            }
+
+                            label {
+                                width: 10%;
+                                color: white;
+                            }
+                        }
+
+                        .form-submit {
+                            text-align: center;
+
+                            input[type=submit] {
+                                width: 70%;
+                                height: 100%;
+                                padding: 10px;
+                                margin: 4px;
+                                text-align: left;
+                                font-family: $font;
+                                background-color: $button-color;
+                                float: center;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .select-card {
+                width: 50%;
+                text-align: center;
+
+                select {
+                    width: 60%;
+                    height: 50px;
+                    margin: 10px;
+                    padding: 10px;
+                    font-size: 1em;
+                    font-family: $font;
+                    background-color: $main-color;
+                    border: 1px solid #333;
+                    border-radius: 5px;
+                    color: #333;
+
+                    &:hover {
+                        background-color: $footer-color;
+                    }
+                }
+
+                button {
+                    color: white;
+                    background-color: $button-color;
+                    padding: 10px;
+                    height: 50px;
+                    width: 50px;
+                    margin-bottom: 2px;
+                    text-decoration: none;
+                    border: 1px solid #333;
+                    border-radius: 5px;
+
+                    &:hover {
+                        background-color: #666;
+                    }
+                }
+            }
+
+            .table-card {
+                margin: 10px;
+                width: 50%;
+                text-align: center;
+
+                table {
+                    width: 100%;
+                    height: 100%;
+                    margin: 10px;
+                    padding: 10px;
+                    font-size: 1em;
+                    font-family: $font;
+                    background-color: $main-color;
+                    border: 1px solid #333;
+                    border-radius: 5px;
+                    color: #333;
+                }
+            }
+        }
+    }
+
+    // Path: _footer.scss
+    .footer {
+        width: 100%;
+        height: 120px;
+        font-family: $font;
+        background-color: $footer-color;
+        text-align: center;
+
+        a {
+            img {
+                width: 50px;
+                height: 50px;
+                margin: 10px;
+            }
+        }
+    }
+}

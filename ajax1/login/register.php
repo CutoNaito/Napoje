@@ -74,6 +74,7 @@
         $_SESSION["username"] = $username;
         $_SESSION["email"] = $email;
         $_SESSION["token"] = GenerateRandomString(20);
+        $_SESSION["password"] = password_hash($password, PASSWORD_DEFAULT);
         $mail->Subject = "Verification code";
         $mail->Body = "Your verification code is: " . $_SESSION["token"];
         try {

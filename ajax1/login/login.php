@@ -19,17 +19,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST["password"] !== "") {
         $password = trim($_POST["password"]);
     }
-    $sql = "SELECT id, username, password, email FROM users WHERE username = ?";
+    $sql = "SELECT ID, name, password, email FROM people WHERE name = ?";
     if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("s", $param_username);
-        $param_username = $username;
+        $stmt->bind_param("s", $username);
 
         if($stmt->execute()){
             $stmt->store_result();
 
-            if($stmt->num_rows() == 1){
+            if($stmt->num_rows() == 1) {
                 $stmt->bind_result($id, $username, $hashed_password, $email);
-                if($stmt->fetch() && password_verify($password, $hashed_password)){
+                if ($stmt->fetch()) {
+                    echo $hashed_password, $username, $password;
+                    if (password_verify($password, $hashed_password)) {
                         session_start();
 
                         $_SESSION["username"] = $username;
@@ -37,10 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION["logged"] = true;
 
                         header("location: ../index.php");
-                    } else{
+                    } else {
                         echo("Username or password is incorrect");
                     }
                 }
+            }
             }
             $stmt->close();
         }

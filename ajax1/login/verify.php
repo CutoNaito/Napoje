@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($stmt = $conn->prepare($sql)){
             $stmt->bind_param("sss", $param_username, $param_password, $param_email);
             $param_username = $_SESSION["username"];
-            $param_password = password_hash($_SESSION["password"], PASSWORD_DEFAULT);
+            $param_password = $_SESSION["password"];
             $param_email = $_SESSION["email"];
             if($stmt->execute()){
                 session_start();
