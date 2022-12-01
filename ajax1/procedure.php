@@ -1,5 +1,5 @@
 <?php
-require "./conn.php";
+require "conn.php";
 global $conn;
 
 $sql = "INSERT INTO base (jmeno, mleko, espresso, coffe, longcoffee, doppio) VALUES (?,?,?,?,?,?)";
