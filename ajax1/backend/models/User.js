@@ -52,6 +52,15 @@ class User{
             throw error;
         }
     }
+
+    async getByToken(token){
+        try{
+            const [result] = await database.execute('SELECT * FROM people WHERE token = ?', [token]);
+            return result;
+        } catch(error){
+            throw error;
+        }
+    }
 }
 
 export default User;

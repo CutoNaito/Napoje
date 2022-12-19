@@ -52,10 +52,21 @@ async function login(req, res, next) {
     }
 };
 
+async function getUserByToken(req, res, next) {
+    const user = new User();
+    try {
+        const result = await user.getByToken(req.params.token);
+        res.status(200).json({ message: 'User found!', result: result });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export default {
     createUser,
     getUser,
     getAllUsers,
     getUserByName,
-    login
+    login,
+    getUserByToken
 };
