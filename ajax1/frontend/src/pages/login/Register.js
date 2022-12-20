@@ -69,7 +69,7 @@ function Register() {
         <div>
             <Header />
             <h1>Register</h1>
-            <form id="register" onSubmit={handleSubmit}>
+            <form className="loginForm" onSubmit={handleSubmit}>
                 <label form="username">Username</label>
                 <input
                     type="text"

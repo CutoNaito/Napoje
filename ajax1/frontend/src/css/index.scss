@@ -173,6 +173,51 @@ body {
         }
     }
 
+    #logout {
+        color: white;
+        background-color: $button-color;
+        padding: 10px;
+        margin-bottom: 2px;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #666;
+        }
+    }
+
+    .loginForm {
+        width: 70%;
+        input {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            margin: 4px;
+            font-family: $font;
+            background-color: white;
+        }
+
+        label {
+            width: 10%;
+            color: white;
+        }
+
+        button {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            margin: 4px;
+            text-align: left;
+            font-family: $font;
+            background-color: lightgrey;
+            float: center;
+
+            &:hover {
+                background-color: #666;
+                cursor: pointer;
+            }
+        }
+    }
+
     // Path: _footer.scss
     .footer {
         width: 100%;

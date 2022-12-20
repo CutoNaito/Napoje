@@ -36,7 +36,7 @@ class Drinks{
 
     async getByName(name) {
         try {
-            const [result] = await database.execute('SELECT * FROM drinks WHERE id_name = ?', [name]);
+            const [result] = await database.execute('SELECT * FROM drinks WHERE id_people = ?', [name]);
             return result;
         } catch (error) {
             throw error;
@@ -45,7 +45,7 @@ class Drinks{
 
     async getByNameWithinAMonth(name, month) {
         try {
-            const [result] = await database.execute('SELECT * FROM drinks WHERE id_name = ? AND MONTH(date) = ?', [name, month]);
+            const [result] = await database.execute('SELECT name, typ, COUNT(typ), MONTH(date) as mesic FROM drinks INNER JOIN people on people.id = drinks.id_people INNER JOIN types on types.id = drinks.id_types WHERE id_people = ? AND MONTH(date) = ? GROUP BY mesic, typ', [name, month]);
             return result;
         } catch (error) {
             throw error;
@@ -54,7 +54,7 @@ class Drinks{
 
     async getByType(type) {
         try {
-            const [result] = await database.execute('SELECT * FROM drinks WHERE id_type = ?', [type]);
+            const [result] = await database.execute('SELECT * FROM drinks WHERE id_types = ?', [type]);
             return result;
         } catch (error) {
             throw error;

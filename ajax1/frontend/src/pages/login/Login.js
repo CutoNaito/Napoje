@@ -37,7 +37,7 @@ return (
     <div>
         <Header />
         <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="loginForm">
             <label htmlFor='email'>
                 Email:
             </label>

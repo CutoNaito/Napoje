@@ -69,7 +69,7 @@ function Verify() {
     return (
         <div>
             <h1>Verify</h1>
-            <form onSubmit={handleSubmit}>
+            <form className='loginForm' onSubmit={handleSubmit}>
                 <label htmlFor='code'>
                     Verification Code:
                 </label>
