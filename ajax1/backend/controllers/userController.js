@@ -35,7 +35,7 @@ async function getUserByName(req, res, next) {
     const user = new User();
     try {
         const result = await user.getByName(req.params.name);
-        res.status(200).json({ message: 'User found!', result: result, match: match });
+        res.status(200).json({ message: 'User found!', result: result});
     } catch (error) {
         console.log(error);
     }
