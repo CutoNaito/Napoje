@@ -9,7 +9,7 @@ class Drinks{
 
     async save() {
         try {
-            const [result] = await database.execute('INSERT INTO drinks (name, type, date) VALUES (?, ?, ?)', [this.name, this.type, this.date]);
+            const [result] = await database.execute('INSERT INTO drinks (date, id_people, id_types) VALUES (?, ?, ?)', [this.date, this.name, this.type]);
             return result;
         } catch (error) {
             throw error;

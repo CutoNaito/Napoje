@@ -29,9 +29,16 @@ passport.use(
                         password: profile["id"],
                         token: token
                     });
-                    document.cookie = "token=" + token;
+
+                    const result = newUser.data;
+                    if (result.error) {
+                        console.log(result.error);
+                    } else {
+                        document.cookie = "token=" + token;
+                    }
+                }
+                getUser();
             }
-            getUser();
         }
     )
 );
