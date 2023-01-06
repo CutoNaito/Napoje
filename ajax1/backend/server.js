@@ -4,6 +4,7 @@ import userRoutes from "./routes/userRoutes.js";
 import smtpRoutes from "./routes/smtpRoutes.js";
 import verificationRoutes from "./routes/verificationRoutes.js";
 import drinksRoutes from "./routes/drinksRoutes.js";
+import typesRoutes from "./routes/typesRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import passportconfig from "./config/passportconfig.js";
 
@@ -16,6 +17,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/smtp", smtpRoutes);
 app.use("/api/verification", verificationRoutes);
 app.use("/api/drinks", drinksRoutes);
+app.use("/api/types", typesRoutes);
 app.use("/auth", authRoutes);
 
 

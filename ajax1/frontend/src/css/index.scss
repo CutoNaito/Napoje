@@ -16,9 +16,12 @@ body {
         background-color: $header-color;
         color: white;
         padding: 0.5rem 1rem;
-
-        h1 {
-            margin: 0;
+        a {
+            text-decoration: none;
+            color: white;
+            h1 {
+                margin: 0;
+            }
         }
 
         .login {

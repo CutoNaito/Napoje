@@ -21,7 +21,7 @@ async function getUser(req, res, next) {
     }
 };
 
-async function getAllUsers(req, res, next) {
+async function getPeopleList(req, res, next) {
     const user = new User();
     try {
         const result = await user.getAll();
@@ -65,7 +65,7 @@ async function getUserByToken(req, res, next) {
 export default {
     createUser,
     getUser,
-    getAllUsers,
+    getPeopleList,
     getUserByName,
     login,
     getUserByToken

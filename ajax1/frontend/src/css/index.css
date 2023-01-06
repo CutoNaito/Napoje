@@ -10,7 +10,11 @@ body header {
   color: white;
   padding: 0.5rem 1rem;
 }
-body header h1 {
+body header a {
+  text-decoration: none;
+  color: white;
+}
+body header a h1 {
   margin: 0;
 }
 body header .login a {

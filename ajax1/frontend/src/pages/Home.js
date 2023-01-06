@@ -34,25 +34,33 @@ function Home() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(type);
+        const date = new Date();
+        console.log(date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate());
 
-        const response = await fetch("/api/drinks", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                type: type,
-                name: userID,
-                date: new Date()
-            })
-        });
+        let i = 0;
+        while (i < quantity) {
+            const response = await fetch("/api/drinks", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    type: type,
+                    name: userID,
+                    date: date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
+                })
+            });
 
-        const result = await response.json();
+            const result = await response.json();
 
-        if (result.error) {
-            setError(result.error);
+            if (result.error) {
+                setError(result.error);
+            }
+            i++;
         }
+        document.cookie = "napoj=" + type;
+        document.cookie = "mnozstvi=" + quantity;
+
     };
 
         
@@ -67,8 +75,8 @@ function Home() {
                         <form onSubmit={handleSubmit}>
                             <div className="form-text">
                                 <label htmlFor="drink">Vyberte nápoj: </label>
-                                <div class="mleko">
-                                <select name="drink" onChange={
+                                <div className="mleko">
+                                <select name="drink" defaultValue={getCookie("napoj")} onChange={
                                     (e) => {
                                         setType(e.target.value);
                                     }
@@ -80,8 +88,8 @@ function Home() {
                                     <option value="5">Doppio+</option>
                                 </select>
                                 </div>
-                                <div class="mnozstvi">
-                                <input type="number" name="quantity" placeholder="Množství" onChange={
+                                <div className="mnozstvi">
+                                <input type="number" name="quantity" placeholder="Množství" defaultValue={getCookie("mnozstvi")} onChange={
                                     (e) => {
                                         setQuantity(e.target.value);
                                     }
