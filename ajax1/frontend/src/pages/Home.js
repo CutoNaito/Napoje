@@ -67,6 +67,7 @@ function Home() {
                         <form onSubmit={handleSubmit}>
                             <div className="form-text">
                                 <label htmlFor="drink">Vyberte nápoj: </label>
+                                <div class="mleko">
                                 <select name="drink" onChange={
                                     (e) => {
                                         setType(e.target.value);
@@ -78,11 +79,14 @@ function Home() {
                                     <option value="4">Long</option>
                                     <option value="5">Doppio+</option>
                                 </select>
+                                </div>
+                                <div class="mnozstvi">
                                 <input type="number" name="quantity" placeholder="Množství" onChange={
                                     (e) => {
                                         setQuantity(e.target.value);
                                     }
                                 } />
+                                </div>
                             </div>
                             <div className="form-submit">
                                 <button type="submit">Submit</button>

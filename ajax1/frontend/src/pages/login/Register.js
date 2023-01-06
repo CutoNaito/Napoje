@@ -68,7 +68,8 @@ function Register() {
     return (
         <div>
             <Header />
-            <h1>Register</h1>
+            <main>
+            <h1 className='loginh1'>Register</h1>
             <form className="loginForm" onSubmit={handleSubmit}>
                 <label form="username">Username</label>
                 <input
@@ -93,6 +94,7 @@ function Register() {
                     onChange={(e) => setPassword(e.target.value)} />
                 <button id='register'>Register</button>
             </form>
+            </main>
             <Footer />
         </div>
     )

@@ -36,7 +36,8 @@ function Login() {
 return (
     <div>
         <Header />
-        <h1>Login</h1>
+        <main>
+        <h1 className='loginh1'>Login</h1>
         <form onSubmit={handleSubmit} className="loginForm">
             <label htmlFor='email'>
                 Email:
@@ -58,6 +59,7 @@ return (
             />
             <button>Submit</button>
         </form>
+        </main>
         <Footer />
     </div>
 )};

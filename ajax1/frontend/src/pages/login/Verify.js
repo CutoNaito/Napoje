@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
 
 function TokenGenerator(length) {
     let result = '';
@@ -68,7 +70,9 @@ function Verify() {
     };
     return (
         <div>
-            <h1>Verify</h1>
+            <Header />
+            <main>
+            <h1 className='loginh1'>Verify</h1>
             <form className='loginForm' onSubmit={handleSubmit}>
                 <label htmlFor='code'>
                     Verification Code:
@@ -80,6 +84,8 @@ function Verify() {
                 />
                 <button>Submit</button>
             </form>
+            </main>
+            <Footer />
         </div>
     );
 }
