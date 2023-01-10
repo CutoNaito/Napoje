@@ -23,6 +23,10 @@ function Register() {
     const history = useNavigate();
 
     const handleSubmit = async (e) => {
+        if (password.length < 8) {
+            alert("Password must be atleast 8 characters long.");
+        }
+
         let code = verificationCode;
         e.preventDefault();
         const response = await fetch("/api/smtp", {

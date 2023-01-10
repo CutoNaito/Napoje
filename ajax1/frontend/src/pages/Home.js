@@ -22,7 +22,7 @@ function Home() {
         const fetchUser = async () => {
             const response = await fetch("/api/users/token/" + getCookie("token"));
             const result = await response.json();
-            if (result.error) {
+            if (result.error || !getCookie("token")) {
                 history("/login");
             } else {
                 setUserID(result.result[0].ID);

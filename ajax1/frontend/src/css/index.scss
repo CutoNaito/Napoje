@@ -1,12 +1,17 @@
-$font: Helvetica, sans-serif;
+$font: 'Open Sans', sans-serif;
 $header-color: #6d4c41;
 $footer-color: #4b3027;
 $button-color: #c79a00;
 $main-color: #d3c0b9;
 
+* {
+    font-family: $font;
+}
+
 body {
     margin: 0 !important;
     padding: 0;
+
 
     // Path: _header.scss
     header {
@@ -49,10 +54,6 @@ body {
         background-color: $main-color;
         height: 800px;
         padding: 1rem;
-
-        h1 {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
 
         h1,
         h2 {

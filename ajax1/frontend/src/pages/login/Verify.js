@@ -66,6 +66,8 @@ function Verify() {
                 document.cookie = `token=${token}`;
                 history('/');
             }
+        } else {
+            alert("Wrong verification code.");
         }
     };
     return (
