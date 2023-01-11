@@ -5,6 +5,7 @@ import Login from './pages/login/Login';
 import Register from './pages/login/Register';
 import Verify from './pages/login/Verify';
 import Profile from './pages/Profile';
+import Admin from './pages/Admin';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/verify" element={<Verify />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </Router>
     </div>
